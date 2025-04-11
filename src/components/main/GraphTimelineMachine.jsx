@@ -3,6 +3,7 @@ import ReactECharts from "echarts-for-react";
 import { TransformTimeline } from "../../common/TransformTimelineData";
 import { useContext } from "react";
 import { TimelineOnlineDeviceContext } from "../../store/TimelineOnlineDeviceContext";
+import { DateRangePenerimaanGetahContext } from "../../store/DateRangePenerimaanGetahContext";
 
 // const sampleData = [
 //   { timestamp: "2023-05-01T08:00:00", count: 12 },
@@ -12,9 +13,10 @@ import { TimelineOnlineDeviceContext } from "../../store/TimelineOnlineDeviceCon
 //   { timestamp: "2023-05-01T12:00:00", count: 30 },
 // ];
 
-const GraphTimelineMachineCon = () => {
+const GraphTimelineMachine = () => {
   const { alatTerkoneksiByRange } = useContext(TimelineOnlineDeviceContext);
-  const result = TransformTimeline.execute(alatTerkoneksiByRange, new Date());
+  const { startDate } = useContext(DateRangePenerimaanGetahContext);
+  const result = TransformTimeline.execute(alatTerkoneksiByRange, startDate);
   const resultWithDate = result.map(data => {
     return {
       timestamp : new Date().toISOString().split("T")[0]+"T"+data.endDate,
@@ -111,4 +113,4 @@ const GraphTimelineMachineCon = () => {
   );
 };
 
-export default GraphTimelineMachineCon;
+export default GraphTimelineMachine;

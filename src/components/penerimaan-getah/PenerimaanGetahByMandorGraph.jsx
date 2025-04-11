@@ -4,7 +4,7 @@ import { MdDevices } from "react-icons/md";
 import GraphTimelineMachineCon from "./GraphTimelineMachineCon";
 import GraphHeatMapPenerimaanGetah from "./GraphHeatMapPenerimaanGetah";
 
-const PenerimaanGetahByMandorGraph = ({data}) => {
+const PenerimaanGetahByMandorGraph = ({ data }) => {
   return (
     <>
       <div className="w-screen h-screen">
@@ -61,16 +61,16 @@ const PenerimaanGetahByMandorGraph = ({data}) => {
                 {/* Grid-end */}
               </div>
               {/* Grid */}
-              <div className="mt-5 grid grid-cols-2 gap-3 ml-2">
+              <div className="mt-5 flex flex-col ml-2">
                 <div className="bg-white flex flex-col items-center rounded shadow-sm">
                   <b className="text-gray-600 mt-3">Timeline Alat Terkoneksi</b>
-                  <GraphTimelineMachineCon />
+                  <GraphTimelineMachineCon/>
                 </div>
                 <div className="bg-white flex flex-col items-center rounded shadow-sm">
                   <b className="text-gray-600 mt-3 mb-[-40px]">
                     Heatmap Pengiriman Getah per Alat 2025
                   </b>
-                  <GraphHeatMapPenerimaanGetah />
+                  <GraphHeatMapPenerimaanGetah data={data.alatMengirimGetahTransformed} />
                 </div>
               </div>
             </div>

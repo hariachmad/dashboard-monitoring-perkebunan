@@ -15,7 +15,7 @@ export const OnlineDeviceProvider = ({ children, interval= 5000 }) => {
 
 const fetchData = () => {
     axios
-      .post("http://localhost:4000/graphql", { query: query })
+      .post("http://157.230.38.147:4000/graphql", { query: query })
       .then((response) => {
         setAlatTerkoneksiHariIni(response.data.data.getUserEventTodayWithCount.count);
       })

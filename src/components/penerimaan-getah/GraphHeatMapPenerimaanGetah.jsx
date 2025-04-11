@@ -1,13 +1,12 @@
 import React from "react";
 import ReactECharts from "echarts-for-react";
-import { sampleData } from "./heatmapData2025";
 
 
-const GraphHeatMapPenerimaanGetah = () => {
-  const months = [...new Set(sampleData.map((item) => item[1]))];
-  const devices = [...new Set(sampleData.map((item) => item[0]))];
+const GraphHeatMapPenerimaanGetah = ({data}) => {
+  const months = [...new Set(data.map((item) => item[1]))];
+  const devices = [...new Set(data.map((item) => item[0]))];
 
-  const chartData = sampleData.map((item) => ({
+  const chartData = data.map((item) => ({
     value: [devices.indexOf(item[0]), months.indexOf(item[1]), item[3]],
     name: `${item[0]} - ${item[1]} ${item[2]}`,
     jumlah: item[3],
@@ -31,19 +30,19 @@ const GraphHeatMapPenerimaanGetah = () => {
     },
     xAxis: {
       type: "category",
-      data: months,
+      data: devices,
       splitArea: { show: true },
-      axisLabel: { rotate: 45 },
+      axisLabel: { rotate: 30  },
     },
     yAxis: {
       type: "category",
-      data: devices,
+      data: months,
       splitArea: { show: true },
     },
     visualMap: {
         show: false,
       min: 0,
-      max: Math.max(...sampleData.map((item) => item[3])),
+      max: Math.max(...data.map((item) => item[3])),
       calculable: true,
       orient: "horizontal",
       left: "center",

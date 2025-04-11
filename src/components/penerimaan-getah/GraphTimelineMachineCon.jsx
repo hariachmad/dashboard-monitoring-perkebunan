@@ -1,17 +1,29 @@
 import * as echarts from "echarts";
 import ReactECharts from "echarts-for-react";
+import { TransformTimeline } from "../../common/TransformTimelineData";
+import { useContext } from "react";
+import { TimelineOnlineDeviceContext } from "../../store/TimelineOnlineDeviceContext";
 
-const sampleData = [
-  { timestamp: "2023-05-01T08:00:00", count: 12 },
-  { timestamp: "2023-05-01T09:00:00", count: 19 },
-  { timestamp: "2023-05-01T10:00:00", count: 23 },
-  { timestamp: "2023-05-01T11:00:00", count: 15 },
-  { timestamp: "2023-05-01T12:00:00", count: 30 },
-];
+// const sampleData = [
+//   { timestamp: "2023-05-01T08:00:00", count: 12 },
+//   { timestamp: "2023-05-01T09:00:00", count: 19 },
+//   { timestamp: "2023-05-01T10:00:00", count: 23 },
+//   { timestamp: "2023-05-01T11:00:00", count: 15 },
+//   { timestamp: "2023-05-01T12:00:00", count: 30 },
+// ];
 
 const GraphTimelineMachineCon = () => {
-  const chartData = sampleData.map((item) => [
-    new Date(item.timestamp).getTime(), // Konversi ke timestamp
+  const { alatTerkoneksiByRange } = useContext(TimelineOnlineDeviceContext);
+  const result = TransformTimeline.execute(alatTerkoneksiByRange, new Date());
+  const resultWithDate = result.map(data => {
+    return {
+      timestamp : new Date().toISOString().split("T")[0]+"T"+data.endDate,
+      count : data.count
+    }
+  })
+
+  const chartData = resultWithDate.map((item) => [
+    new Date(item.timestamp).getTime(),
     item.count,
   ]);
 
@@ -86,10 +98,10 @@ const GraphTimelineMachineCon = () => {
 
   return (
     <>
-      <div style={{ width: "600px", height: "320px" }}>
+      <div style={{ width: "100%", height: "320px" }}>
         <ReactECharts
           option={options}
-          style={{ height: "300px", width: "600px" }}
+          style={{ height: "300px", width: "100%" }}
           notMerge={true}
           lazyUpdate={true}
           theme="light"

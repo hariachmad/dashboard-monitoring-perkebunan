@@ -1,9 +1,9 @@
 import axios from "axios";
 import { createContext, useEffect, useState } from "react";
 
-export const PenerimaanGetahContext = createContext();
+export const PenerimaanGetahTodayContext = createContext();
 
-export const PenerimaanGetahProvider = ({ children,interval = 5000 }) => {
+export const PenerimaanGetahTodayProvider = ({ children,interval = 5000 }) => {
   const [alatMengirimGetahHariIni, setAlatMengirimGetahHariIni] = useState(0);
   const [rupiahPengirimanGetahHariIni, setRupiahMengirimGetahHariIni] =
     useState(0);
@@ -18,7 +18,7 @@ export const PenerimaanGetahProvider = ({ children,interval = 5000 }) => {
 
 const fetchData = ()=>{
     axios
-      .post("http://localhost:4000/graphql", { query: query })
+      .post("http://157.230.38.147:4000/graphql", { query: query })
       .then((response) => {
         setAlatMengirimGetahHariIni(response.data.data.getPenerimaanGetahEventToday.count);
         setRupiahMengirimGetahHariIni(response.data.data.getPenerimaanGetahEventToday.rupiah);
@@ -36,7 +36,7 @@ const fetchData = ()=>{
 
 
   return (
-    <PenerimaanGetahContext.Provider
+    <PenerimaanGetahTodayContext.Provider
       value={
         {alatMengirimGetahHariIni,
         setAlatMengirimGetahHariIni,
@@ -45,6 +45,6 @@ const fetchData = ()=>{
       }
     >
       {children}
-    </PenerimaanGetahContext.Provider>
+    </PenerimaanGetahTodayContext.Provider>
   );
 };

@@ -8,20 +8,11 @@ import { DatepickerAlatTerkoneksi } from "../components/main/DatepickerAlatTerko
 const Main = () => {
   return (
     <Layout>
-      <div className="w-screen h-screen">
-        <div className="flex-auto ml-18">
-          <div className="flex flex-col">
-            <Header />
-            <div className="min-h-screen bg-green-200">
-              <CountingStateContainer />
-              {/* Grid */}
-              <div className="mt-5 flex flex-col ml-2">
-                <TimelineAlatTekoneksi />
-                <GraphPenerimaanGetahContainer />
-              </div>
-            </div>
-          </div>
-        </div>
+      <CountingStateContainer />
+      {/* Grid */}
+      <div className="mt-5 flex flex-col ml-2">
+        <TimelineAlatTekoneksi />
+        <GraphPenerimaanGetahContainer />
       </div>
     </Layout>
   );

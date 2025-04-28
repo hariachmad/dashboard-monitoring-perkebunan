@@ -6,20 +6,23 @@ import { OnlineDeviceProvider } from "./store/OnlineDeviceContext.jsx";
 import { PenerimaanGetahTodayProvider } from "./store/PenerimaanGetahTodayContext.jsx";
 import { PenerimaanGetahByRangeProvider } from "./store/PenerimaanGetahByRangeContext.jsx";
 import { TimelineOnlineDeviceProvider } from "./store/TimelineOnlineDeviceContext.jsx";
-import { DateRangePenerimaanGetahContext, DateRangePenerimaanGetahProvider } from "./store/DateRangePenerimaanGetahContext.jsx";
+import {
+  DateRangePenerimaanGetahContext,
+  DateRangePenerimaanGetahProvider,
+} from "./store/DateRangePenerimaanGetahContext.jsx";
 
 createRoot(document.getElementById("root")).render(
-  <DateRangePenerimaanGetahProvider>
-    <TimelineOnlineDeviceProvider>
-      <PenerimaanGetahByRangeProvider>
-        <OnlineDeviceProvider>
-          <PenerimaanGetahTodayProvider>
-            <StrictMode>
-              <App />
-            </StrictMode>
-          </PenerimaanGetahTodayProvider>
-        </OnlineDeviceProvider>
-      </PenerimaanGetahByRangeProvider>
-    </TimelineOnlineDeviceProvider>
-  </DateRangePenerimaanGetahProvider>
+    <DateRangePenerimaanGetahProvider>
+      <TimelineOnlineDeviceProvider>
+        <PenerimaanGetahByRangeProvider>
+          <OnlineDeviceProvider>
+            <PenerimaanGetahTodayProvider>
+              <StrictMode>
+                <App />
+              </StrictMode>
+            </PenerimaanGetahTodayProvider>
+          </OnlineDeviceProvider>
+        </PenerimaanGetahByRangeProvider>
+      </TimelineOnlineDeviceProvider>
+    </DateRangePenerimaanGetahProvider>
 );

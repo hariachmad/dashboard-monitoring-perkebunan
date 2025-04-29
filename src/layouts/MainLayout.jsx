@@ -6,7 +6,7 @@ const Layout = ({ children }) => {
   return (
     <>
       <Navigation />
-      <div className="w-screen h-screen">
+      <div className="w-[1480px] h-screen">
         <div className="flex-auto ml-18">
           <div className="flex flex-col">
             <Header />

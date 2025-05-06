@@ -12,23 +12,26 @@ import {
 } from "./store/DateRangePenerimaanGetahContext.jsx";
 import { DetailPenerimaanGetahProvider } from "./store/DetailPenerimaanGetahContext.jsx";
 import { DateRangeDetailPenerimaanGetahProvider } from "./store/DateRangeDetailPenerimaangetahContext.jsx";
+import { AuthProvider } from "./store/AuthContext.jsx";
 
 createRoot(document.getElementById("root")).render(
-  <DateRangeDetailPenerimaanGetahProvider>
-    <DetailPenerimaanGetahProvider>
-      <DateRangePenerimaanGetahProvider>
-        <TimelineOnlineDeviceProvider>
-          <PenerimaanGetahByRangeProvider>
-            <OnlineDeviceProvider>
-              <PenerimaanGetahTodayProvider>
-                <StrictMode>
-                  <App />
-                </StrictMode>
-              </PenerimaanGetahTodayProvider>
-            </OnlineDeviceProvider>
-          </PenerimaanGetahByRangeProvider>
-        </TimelineOnlineDeviceProvider>
-      </DateRangePenerimaanGetahProvider>
-    </DetailPenerimaanGetahProvider>
-  </DateRangeDetailPenerimaanGetahProvider>
+  <AuthProvider>
+    <DateRangeDetailPenerimaanGetahProvider>
+      <DetailPenerimaanGetahProvider>
+        <DateRangePenerimaanGetahProvider>
+          <TimelineOnlineDeviceProvider>
+            <PenerimaanGetahByRangeProvider>
+              <OnlineDeviceProvider>
+                <PenerimaanGetahTodayProvider>
+                  <StrictMode>
+                    <App />
+                  </StrictMode>
+                </PenerimaanGetahTodayProvider>
+              </OnlineDeviceProvider>
+            </PenerimaanGetahByRangeProvider>
+          </TimelineOnlineDeviceProvider>
+        </DateRangePenerimaanGetahProvider>
+      </DetailPenerimaanGetahProvider>
+    </DateRangeDetailPenerimaanGetahProvider>
+  </AuthProvider>
 );

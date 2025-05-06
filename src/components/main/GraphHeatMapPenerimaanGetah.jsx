@@ -81,7 +81,7 @@ const GraphHeatMapPenerimaanGetah = ({data}) => {
 
   return (
     <>
-      <div style={{ width: "100%", height: "400px" }}>
+      <div style={{ width: "90%", height: "400px" }}>
         <ReactECharts
           option={options}
           style={{ height: "100%" }}

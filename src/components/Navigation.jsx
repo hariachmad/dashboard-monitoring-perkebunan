@@ -4,11 +4,13 @@ import { FaArrowRight } from "react-icons/fa";
 import { CiSearch } from "react-icons/ci";
 import { MdOutlineCallReceived } from "react-icons/md";
 import { NavLink } from "react-router";
+import { GrNotes } from "react-icons/gr";
 
 const Navigation = () => {
   const [open, setOpen] = useState(true);
   const Menus = [
-    { title: "PENERIMAAN GETAH", link: "detail-penerimaan-getah" },
+    {title: "PENERIMAAN GETAH", link: "detail-penerimaan-getah",icon: <MdOutlineCallReceived className="text-white"/> },
+    {title: "COMPLAINT", link: "complaint",icon: <GrNotes className="text-white"/>}
   ];
 
   return (
@@ -33,7 +35,7 @@ const Navigation = () => {
             }}
           />
         )}
-        <NavLink to={'/'}>
+        <NavLink to={'/main'}>
           {open ? (
             <img src="logo-perhutani.png" className="w-28 h-12  duration-300" />
           ) : (
@@ -44,7 +46,7 @@ const Navigation = () => {
           )}
         </NavLink>
         <div
-          className={`flex items-center align-middle justify-center rounded-md bg-gray-100 mt-12 ${
+          className={`flex items-center align-middle justify-center rounded-md bg-gray-100 mt-12 mb-7 ${
             !open ? "px-1 w-12" : "px-4"
           } py-2`}
         >
@@ -65,9 +67,10 @@ const Navigation = () => {
               <li key={index}>
                 <NavLink
                   to={`/${menu.link}`}
-                  className={`text-sm flex items-center gap-x-4 cursor-pointer p-2 bg-green-500 hover:bg-green-700 rounded-md mt-8  `}
+                  className={`text-sm flex items-center gap-x-4 cursor-pointer p-2 bg-green-500 hover:bg-green-700 rounded-md mt-2  `}
                 >
-                  <MdOutlineCallReceived className="text-white" />
+                  {/* <MdOutlineCallReceived className="text-white" /> */}
+                  <div>{menu.icon}</div>
                   <span className={`${!open && "hidden"} text-white`}>
                     {menu.title}
                   </span>

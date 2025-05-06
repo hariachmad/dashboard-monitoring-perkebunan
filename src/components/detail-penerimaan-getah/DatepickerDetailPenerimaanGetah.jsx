@@ -72,7 +72,7 @@ export const DatepickerDetailPenerimaanGetah = () => {
         <div className="flex justify-center items-center text-center">
           <button
             // onClick={handleApply}
-            className="w-full text-center h-10 px-7 bg-blue-300 text-white rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+            className="!w-[100%] !text-center !h-8 !px-7 !bg-blue-300 text-white !rounded-md !hover:bg-blue-700 !focus:outline-none !focus:ring-2 !focus:ring-blue-500 !focus:ring-offset-2"
             onClick={()=>{
                 setStartDate(format(startDateLocal,'yyyy-MM-dd'));
                 setEndDate(format(addDays(endDateLocal,1),'yyyy-MM-dd'));

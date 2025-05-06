@@ -10,9 +10,6 @@ export const DetailPenerimaanGetahProvider = ({ children }) => {
   );
   const [result, setResult] = useState([]);
 
-  console.log("startDate: ",startDate);
-  console.log("endDate: ",endDate);
-
   const query = `query DetailPenerimaanGetah {
     detailPenerimaanGetah(
         filter: { startDate: "${startDate}", endDate: "${endDate}" }

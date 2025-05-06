@@ -6,11 +6,11 @@ const Layout = ({ children }) => {
   return (
     <>
       <Navigation />
-      <div className="w-[1480px] h-screen">
+      <div className="w-[1350px] h-screen">
         <div className="flex-auto ml-18">
           <div className="flex flex-col">
             <Header />
-            <div className="min-h-screen bg-green-200">
+            <div className="min-h-screen bg-green-200 pr-3">
             <main>{children}</main>
             </div>
             <Footer />

@@ -26,7 +26,7 @@ export const PenerimaanGetahByRangeProvider = ({
 
   const fetchData = () => {
     axios
-      .post("http://157.230.38.147:4000/graphql", { query: query })
+      .post(process.env.REACT_APP_API_URL+"/graphql", { query: query })
       .then((response) => {
         setAlatMengirimGetah(
           response.data.data.getPenerimaanGetahEventWithDateRange

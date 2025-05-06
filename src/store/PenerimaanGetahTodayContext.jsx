@@ -18,7 +18,7 @@ export const PenerimaanGetahTodayProvider = ({ children,interval = 5000 }) => {
 
 const fetchData = ()=>{
     axios
-      .post("http://157.230.38.147:4000/graphql", { query: query })
+      .post(process.env.REACT_APP_API_URL+"/graphql", { query: query })
       .then((response) => {
         setAlatMengirimGetahHariIni(response.data.data.getPenerimaanGetahEventToday.count);
         setRupiahMengirimGetahHariIni(response.data.data.getPenerimaanGetahEventToday.rupiah);

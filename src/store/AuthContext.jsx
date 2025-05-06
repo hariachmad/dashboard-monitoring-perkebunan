@@ -11,7 +11,7 @@ export const AuthProvider = ({ children }) => {
 
   const login = async (username, password) => {
     try {
-      const response = await axios.post("http://localhost:4000/auth-dashboard/login",{username,password});
+      const response = await axios.post(process.env.REACT_APP_API_URL+"/auth-dashboard/login",{username,password});
       if (response.status >= 200 && response.status <= 300) {
         setUser(username);
         setRole(response.data.role);

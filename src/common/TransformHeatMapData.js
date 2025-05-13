@@ -84,7 +84,6 @@ export class TransformHeatMapData {
       result.forEach((data) => {
         finalDataStore.push(Object.values(data));
       });
-
       return finalDataStore;
   }
 }

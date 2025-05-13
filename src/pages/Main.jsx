@@ -4,6 +4,7 @@ import { CountingStateContainer } from "../components/main/CountingStateContaine
 import { TimelineAlatTekoneksi } from "../components/main/TimlineAlatTerkoneksi";
 import { GraphPenerimaanGetahContainer } from "../components/main/GraphPenerimaanGetahContainer";
 import { DatepickerAlatTerkoneksi } from "../components/main/DatepickerAlatTerkoneksi";
+import { GraphOnlineDeviceMonth } from "../components/main/GraphOnlineDeviceMonth";
 
 const Main = () => {
   return (
@@ -13,6 +14,7 @@ const Main = () => {
       <div className="mt-5 flex flex-col ml-2">
         <TimelineAlatTekoneksi />
         <GraphPenerimaanGetahContainer />
+        <GraphOnlineDeviceMonth/>
       </div>
     </Layout>
   );

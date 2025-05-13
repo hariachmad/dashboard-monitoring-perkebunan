@@ -1,6 +1,7 @@
 import GraphHeatMapPenerimaanGetah from "./GraphHeatMapPenerimaanGetah";
 
 export const GraphPenerimaanGetah = ({ data }) => {
+  console.log(data);
   return (
     <>
       <section>

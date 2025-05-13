@@ -1,4 +1,3 @@
-import axios from "axios";
 import { useContext} from "react";
 import { TransformMonthData } from "../../common/TransformMonthData";
 import ReactECharts from "echarts-for-react";
@@ -30,7 +29,7 @@ export const GraphOnlineDeviceMonth = () => {
     return acc;
   }, []);
 
-  const targetYear = positiveCounts[0].year;
+  const targetYear = positiveCounts[0]?.year;
 
   const existingData = {};
   positiveCounts.forEach((item) => {

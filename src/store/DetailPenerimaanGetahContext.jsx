@@ -37,6 +37,7 @@ export const DetailPenerimaanGetahProvider = ({ children }) => {
       .post(import.meta.env.VITE_API_URL+"/graphql", { query: query })
       .then((response) => {
         setResult(response.data.data.detailPenerimaanGetah);
+        console.log(response.data.data.detailPenerimaanGetah);
       })
       .catch((err) => {
         console.error(err);
